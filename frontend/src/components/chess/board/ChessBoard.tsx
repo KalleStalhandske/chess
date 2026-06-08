@@ -1,9 +1,18 @@
+"use client";
+
+import { useState } from "react";
+import { Square } from "./Square";
+import type { Board } from "@/lib/chess/types";
+import { initialBoard } from "@/lib/chess/initialBoard";
+
+
 export function ChessBoard() {
   const files = ["a", "b", "c", "d", "e", "f", "g", "h"]
   const ranks = [8, 7, 6, 5, 4, 3, 2, 1]
 
+
   return (
-    <div className="grid grid-cols-8 w-[600px] h-[600px] border border-zinc-800">
+    <div className="grid grid-cols-8 w-150 h-150 border border-zinc-800">
       {ranks.map((rank) =>
         files.map((file, fileIndex) => {
           const rankIndex = 8 - rank
