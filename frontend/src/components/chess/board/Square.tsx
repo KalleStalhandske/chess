@@ -19,8 +19,8 @@ export function Square({ square, index, isLight, isSelected, onClick }: SquarePr
       className={`
         relative aspect-square min-w-0 min-h-0
         flex items-center justify-center overflow-hidden
-        ${isLight ? "bg-stone-200" : "bg-stone-700"}
-        ${isSelected ? "ring-4 ring-yellow-400 ring-inset" : ""}
+        ${isLight ? "bg-[#eeeed2]" : "bg-[#769656]"}
+        ${isSelected ? "bg-[#f6f669]" : isLight ? "bg-[#eeeed2]" : "bg-[#769656]"}
       `}
     >
       {square && <Piece piece={square} />}
