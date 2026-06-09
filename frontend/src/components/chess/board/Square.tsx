@@ -1,17 +1,21 @@
-import type { Piece as PieceData } from "@/lib/chess/types";
 import { Piece } from "./Piece";
+import type { Square as SquareData } from "@/lib/chess/types";
 
 type SquareProps = {
-  piece: PieceData | null;
+  square: SquareData;
+  isLight: boolean;
 };
 
-export function Square({ piece }: SquareProps) {
-
+export function Square({ square, isLight }: SquareProps) {
   return (
-    <button
-      type="button"
+    <div
+      className={`
+        relative aspect-square min-w-0 min-h-0
+        flex items-center justify-center overflow-hidden
+        ${isLight ? "bg-stone-200" : "bg-stone-700"}
+      `}
     >
-      {piece && <Piece piece={piece} />}
-    </button>
+      {square && <Piece piece={square} />}
+    </div>
   );
 }
